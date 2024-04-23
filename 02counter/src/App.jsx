@@ -13,7 +13,8 @@ function App() {
     // console.log("value added" , Math.random())
     // counter = counter + 1;
     if(counter < 20){
-      setCounter(counter + 1);
+      setCounter(++counter);
+      // setCounter(prevCounter => prevCounter + 1);
     }
     // console.log("clicked" , Math.random())
     // console.log("clicked" , counter)
