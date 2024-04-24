@@ -60,6 +60,7 @@ export default function Header() {
 ## Footer component
 
 ```javascript
+
 export default function Footer() {
     return (
         <footer className="bg-white border-y">
