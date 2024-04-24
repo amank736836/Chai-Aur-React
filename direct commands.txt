@@ -1,0 +1,16 @@
+npm create vite@latest React Javascript
+cd folderName
+npm i
+npm i -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+- in tailwind.config.js paste the following code 
+content: [
+    "index.html",
+    "src/**/*.{js,jsx,ts,tsx}",
+  ],
+
+- in index.css paste the following code
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
