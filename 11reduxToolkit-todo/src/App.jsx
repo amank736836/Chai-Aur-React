@@ -9,12 +9,17 @@ import store from './app/store'
 
 function App() {
 
+  const [editText , setEditText] = useState("");
+  const [id , setId] = useState(null);
+
   return (
     <>
       <Provider store={store}>
       <h1>Learn about redux toolkit</h1>
-      <AddTodo/>
-      <Todos/>
+      <AddTodo editText={editText} setEditText={setEditText}
+        id={id} setId={setId} />
+      <Todos editText={editText} setEditText={setEditText}
+        id={id} setId={setId} />
       </Provider>
     </>
   )
