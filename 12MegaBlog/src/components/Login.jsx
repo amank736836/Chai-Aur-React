@@ -33,7 +33,7 @@ function Login() {
         className='flex items-center justify-center w-full'
     >
         <div
-            className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl 
+            className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl
             p-10 border border-black/10`}
         >
             <div
@@ -68,18 +68,18 @@ function Login() {
             <form onSubmit={handleSubmit(login)} className='mt-8'>
                 <div className='space-y-5'>
                     <Input
-                    label='Email:'
-                    placeholder='Enter your email'
-                    type='email'
-                    {...register('email' , {
-                        required:true,
-                        validate:{
-                            matchPattern: (value) => {
-                                /^[_A-Za-z0-9-]+(?:\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*(?:\.[A-Za-z]{2,})$/.test(value) 
-                                || "Email address must be a valid address",
+                        label='Email:'
+                        placeholder='Enter your email'
+                        type='email'
+                        {...register('email' , {
+                            required:true,
+                            validate:{
+                                matchPattern: (value) => {
+                                    /^[_A-Za-z0-9-]+(?:\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*(?:\.[A-Za-z]{2,})$/.test(value) 
+                                    || "Email address must be a valid address",
+                                }
                             }
-                        }
-                    })}
+                        })}
                     />
 
                     <Input
