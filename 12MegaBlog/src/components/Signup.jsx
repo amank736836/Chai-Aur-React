@@ -29,9 +29,7 @@ function Signup() {
     }
     return (
     <div className='flex items-center justify-center'>
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl
-        p-10 border border-black/10`}
-        >
+        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
             <div className='mb-2 flex justify-center'>
                 <span className='inline-block w-full max-w-[100px]'>
                     <Logo width="100%" />
@@ -50,7 +48,7 @@ function Signup() {
                         Sign In
                 </Link>
             </p>
-            {error && 
+            {error &&
                 <p className='text-red-600 mt-8 text-center'>
                     {error}
                 </p>
@@ -70,9 +68,8 @@ function Signup() {
                         {...register('email' , {
                             required:true,
                             validate:{
-                                matchPattern: (value) => {
-                                    /^[_A-Za-z0-9-]+(?:\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*(?:\.[A-Za-z]{2,})$/.test(value) 
-                                    || "Email address must be a valid address",
+                                matchPattern: (value) => { /^[_A-Za-z0-9-]+(?:\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*(?:\.[A-Za-z]{2,})$/.test(value) 
+                                || "Email address must be a valid address";
                                 }
                             }
                         })}

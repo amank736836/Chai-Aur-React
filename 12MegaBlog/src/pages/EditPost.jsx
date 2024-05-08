@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
 import { Container, PostForm } from '../components'
 import appwriteService from '../appwrite/config'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 function EditPost() {
@@ -18,7 +18,7 @@ function EditPost() {
             })
         }
         else{
-            navigate('/404')
+            navigate('/')
         }
     }, [slug, navigate])
 

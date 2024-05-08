@@ -19,12 +19,11 @@ function Select({
             outline-none focus:bg-gray-50 duration-200 border border-gray-200
             w-full ${className}`}
         >
-            {options?.map((option) => {
+            {options?.map((option) => (
                     <option key={option} value={option}>
                         {option}
                     </option>
-                }
-            )}
+            ))}
         </select>
     </div>
   )

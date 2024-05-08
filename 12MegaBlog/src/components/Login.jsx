@@ -74,10 +74,7 @@ function Login() {
                         {...register('email' , {
                             required:true,
                             validate:{
-                                matchPattern: (value) => {
-                                    /^[_A-Za-z0-9-]+(?:\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*(?:\.[A-Za-z]{2,})$/.test(value) 
-                                    || "Email address must be a valid address",
-                                }
+                                matchPattern: (value) => /^[_A-Za-z0-9-]+(?:\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*(?:\.[A-Za-z]{2,})$/.test(value) || "Email address must be a valid address"
                             }
                         })}
                     />

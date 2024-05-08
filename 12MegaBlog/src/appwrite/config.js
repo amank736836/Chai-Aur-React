@@ -16,7 +16,8 @@ export class Service{
 
     async createPost({title,slug,content,featuredImage,status,userId}){
         try{
-            const post = await this.databases.createDocument(
+            // const post = await this.databases.createDocument(
+            return await this.databases.createDocument(
                 conf.appwriteDatabaseId , conf.appwriteCollectionId , slug ,
                 {
                     title,
@@ -26,12 +27,10 @@ export class Service{
                     userId
                 }
             );
-            return post;
-
+            // return post;
         }catch(error){
             console.log("Service :: createPost :: error :: ", error);
         }
-
     }
 
     async updatePost(slug , {title,content,featuredImage,status}){
@@ -44,7 +43,7 @@ export class Service{
                     featuredImage,
                     status,
                 }
-            );
+            )
         }catch(error){
             console.log("Service :: updatePost :: error :: ", error);
         }
@@ -69,6 +68,7 @@ export class Service{
             );
         }catch(error){
             console.log("Service :: getPost :: error :: ", error);
+            return false;
         }
     }
 
@@ -76,14 +76,13 @@ export class Service{
         try{
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId , conf.appwriteCollectionId , queries
-            ); 
+            );
         }catch(error){
             console.log("Service :: getPosts :: error :: ", error);
         }
     }
 
     // file upload service
-    
     async uploadFile(file){
         try{
             return await this.bucket.createFile(
@@ -98,10 +97,12 @@ export class Service{
 
     async deleteFile(fileId){
         try{
-            return await this.bucket.deleteFile(
-                conf.appwriteBucketId , 
+            // return await this.bucket.deleteFile(
+            await this.bucket.deleteFile(
+                conf.appwriteBucketId ,
                 fileId
             );
+            return true
         }catch(error){
             console.log("Service :: deleteFile :: error :: ", error);
             return false;
@@ -110,7 +111,7 @@ export class Service{
 
     async getFilePreview(fileId){
         return this.bucket.getFilePreview(
-            conf.appwriteBucketId , 
+            conf.appwriteBucketId ,
             fileId
         );
     }

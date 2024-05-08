@@ -25,8 +25,7 @@ function Todos(props) {
       <ul className="list-none">
         {todos.map((todo) => (
           <li
-            className="mt-4 flex justify-between items-center
-                bg-zinc-800 px-4 py-2 rounded"
+            className="flex items-center justify-between px-4 py-2 mt-4 rounded bg-zinc-800"
             key={todo.id}
           >
             <div className="text-white">{todo.text}</div>
@@ -36,18 +35,14 @@ function Todos(props) {
                   onClick={ () => {
                     changeValue(todo);
                   }}
-                  className="text-white bg-green-900 border-0 mr-4
-                            py-1 px-4 focus:outline-none hover:bg-black
-                            rounded text-lg"
+                  className="px-4 py-1 mr-4 text-lg text-white bg-green-900 border-0 rounded focus:outline-none hover:bg-black"
                 >
                   ✏️
                 </button>
                )}
               <button
                 onClick={() => dispatch(removeTodo(todo.id))}
-                className="text-white bg-green-900 border-0
-              py-1 px-4 focus:outline-none hover:bg-black
-              rounded text-lg"
+                className="px-4 py-1 text-lg text-white bg-green-900 border-0 rounded focus:outline-none hover:bg-black"
               >
                 🗑️
               </button>

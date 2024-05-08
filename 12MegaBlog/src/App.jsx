@@ -1,5 +1,4 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
 import { login , logout } from './store/authSlice'
@@ -35,9 +34,8 @@ function App() {
         <Footer/>
       </div>
     </div>
-    ) : (
-    <div>Loading...</div>
-    )
+    ) : null
+    // <div>Loading...</div>
   )
 }
 
