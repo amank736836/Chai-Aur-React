@@ -11,7 +11,7 @@ function Home() {
       <Container>
         <div className="flex flex-wrap justify-center pt-56 pb-56">
           <div className="w-full text-center">
-            <h1 className="text-6xl font-bold text-center text-gray-900 dark:text-white">
+            <h1 className="text-6xl font-bold text-center text-gray-900 hover:text-green-700 dark:text-white dark:hover:text-blue-700">
               Welcome to{" "}
               <span className="text-blue-700 dark:text-green-900">Frame & Phrase!</span>
             </h1>
