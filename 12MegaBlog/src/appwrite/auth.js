@@ -17,7 +17,7 @@ class AuthService {
         // await this.sendVerificationEmail();
         // this.account.deleteSessions();
         return this.login({ email, password });
-        return userAccount;
+        // return userAccount;
       } else {
         return null; // Handle failure to create account
       }
