@@ -9,23 +9,24 @@ import { ThemeContextProvider } from "./hooks/useTheme.js";
 function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
+  
+  useEffect(() => {
+    authService
+    .getCurrentUser()
+    .then((userData) => {
+      if (userData) {
+        dispatch(login({ userData }));
+      } else {
+        dispatch(logout());
+      }
+    })
+    .finally(() => setLoading(false));
+  }, []);
+  
   const [themeMode, setThemeMode] = useState(
     localStorage.getItem("themeMode") || "light"
   );
-
-  useEffect(() => {
-    authService
-      .getCurrentUser()
-      .then((userData) => {
-        if (userData) {
-          dispatch(login({ userData }));
-        } else {
-          dispatch(logout());
-        }
-      })
-      .finally(() => setLoading(false));
-  }, []);
-
+  
   useEffect(() => {
     document.documentElement.className = themeMode;
     // document.documentElement.setAttribute("data-theme", themeMode);
