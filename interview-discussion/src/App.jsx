@@ -25,6 +25,8 @@ function App() {
   const clickMe = () => {
     console.log('logged')
     // setValue(value * 5)
+    // setValue(1)
+    // setValue(3)
     setValue({
       value: 1
     });
