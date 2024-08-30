@@ -61,7 +61,6 @@ function App() {
         )}
       </ThemeContextProvider>
     </>
-    // <div>Loading...</div>
   );
 }
 
